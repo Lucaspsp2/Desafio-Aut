@@ -1,0 +1,6 @@
+pytest
+appium-python-client
+requests
+allure-pytest
+selenium
+webdriver-manager

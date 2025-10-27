@@ -1,0 +1,19 @@
+# Arquivos e Pastas a serem ignorados pelo Git
+
+# Ambientes Virtuais (não envia o venv para o Git)
+amer/
+.venv/
+venv/
+__pycache__
+*.pyc
+
+# Arquivos de Evidência e Relatórios (Grandes e Gerados)
+artifacts/
+report_allure/
+allure-results/  # Pasta onde os metadados do Allure são salvos
+*.png            # Screenshots
+*.mp4            # Vídeos da execução
+
+# Configurações Locais
+.pytest_cache/
+.DS_Store
