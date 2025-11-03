@@ -1,0 +1,163 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.9.6, pytest-8.4.2, pluggy-1.6.0 -- /Users/lpsp/Documents/aut-americanas/americanas/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/lpsp/Documents/aut-americanas
+configfile: pytest.ini
+plugins: allure-pytest-2.15.0
+collecting ... collected 1 item
+
+tests/mobile/test_mobile.py::test_purchase_flow_mobile 2025-10-31 08:38:34,916 - aut-americanas - INFO - Inicializando Fixture: mobile_driver (Appium).
+2025-10-31 08:38:43,596 - aut-americanas - INFO - Driver Appium inicializado com sucesso.
+
+🔁 Iniciando ciclo 1/3 para: Apple iPhone 17 Pro Max 256GB Prateado
+🧾 Verificando banner promocional...
+2025-10-31 08:38:50,231 - aut-americanas - INFO - Verificando banner promocional...
+2025-10-31 08:39:03,023 - aut-americanas - INFO - Clicou no elemento: ('accessibility id', 'Close')
+2025-10-31 08:39:03,023 - aut-americanas - INFO - Banner fechado com sucesso.
+✅ Nenhum banner impedindo o fluxo.
+🎥 Iniciando gravação de vídeo...
+🔎 Iniciando busca pelo produto: Apple iPhone 17 Pro Max 256GB Prateado
+2025-10-31 08:39:04,736 - aut-americanas - INFO - Elemento visível: ('accessibility id', 'busque aqui seu produto')
+⚠️ Ícone de busca não encontrado — seguindo mesmo assim.
+⌨️ Produto digitado e pesquisa iniciada.
+2025-10-31 08:39:10,222 - aut-americanas - INFO - Elemento visível: ('-android uiautomator', 'new UiSelector().descriptionStartsWith("Apple iPhone 17 Pro Max 256GB")')
+2025-10-31 08:39:11,223 - aut-americanas - INFO - Clicou no elemento: ('-android uiautomator', 'new UiSelector().descriptionStartsWith("Apple iPhone 17 Pro Max 256GB")')
+✅ Produto encontrado e aberto.
+2025-10-31 08:39:12,574 - aut-americanas - INFO - Texto do elemento ('xpath', '//android.view.View[@content-desc="Apple iPhone 17 Pro Max 256GB Prateado"]'): 
+2025-10-31 08:39:13,221 - aut-americanas - INFO - Texto do elemento ('xpath', "//android.view.View[contains(@content-desc, '13.498,80')]"): 
+🔽 Iniciando scroll até encontrar o campo de CEP...
+🔁 Scroll realizado (1/8)...
+✅ Campo CEP encontrado após 2 scroll(s).
+📮 CEP inválido digitado com sucesso.
+🧮 Botão 'Calcular' clicado para CEP inválido.
+📮 CEP válido '50710330' digitado com sucesso.
+🧮 Botão 'Calcular' clicado para CEP válido.
+⚠️ Erro no ciclo do produto 'Apple iPhone 17 Pro Max 256GB Prateado': Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Users/lpsp/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-android-driver/lib/commands/find.ts:86:11)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/usr/local/lib/node_modules/appium/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at AndroidUiautomator2Driver.findElement (/usr/local/lib/node_modules/appium/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+
+-------------------------------- live log call ---------------------------------
+2025-10-31 08:39:52 [ERROR] - Erro no ciclo do produto 'Apple iPhone 17 Pro Max 256GB Prateado': Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Users/lpsp/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-android-driver/lib/commands/find.ts:86:11)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/usr/local/lib/node_modules/appium/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at AndroidUiautomator2Driver.findElement (/usr/local/lib/node_modules/appium/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+📝 Erro registrado em logs/erros.log: Erro no ciclo do produto 'Apple iPhone 17 Pro Max 256GB Prateado': Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Users/lpsp/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-android-driver/lib/commands/find.ts:86:11)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/usr/local/lib/node_modules/appium/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at AndroidUiautomator2Driver.findElement (/usr/local/lib/node_modules/appium/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+💾 Vídeo salvo em: logs/videos/Apple_iPhone_17_Pro_Max_256GB_Prateado_2025-10-31_08-39-53.mp4
+
+🔁 Iniciando ciclo 2/3 para: Apple Watch se gps Caixa prateada de alumínio – 44 mm Pulseira esportiva denim – p/m
+🧾 Verificando banner promocional...
+2025-10-31 08:40:05,414 - aut-americanas - INFO - Verificando banner promocional...
+2025-10-31 08:40:16,557 - aut-americanas - INFO - Clicou no elemento: ('accessibility id', 'Close')
+2025-10-31 08:40:16,557 - aut-americanas - INFO - Banner fechado com sucesso.
+✅ Nenhum banner impedindo o fluxo.
+🎥 Iniciando gravação de vídeo...
+🔎 Iniciando busca pelo produto: Apple Watch se gps Caixa prateada de alumínio – 44 mm Pulseira esportiva denim – p/m
+2025-10-31 08:40:18,673 - aut-americanas - INFO - Elemento visível: ('accessibility id', 'busque aqui seu produto')
+⚠️ Ícone de busca não encontrado — seguindo mesmo assim.
+⌨️ Produto digitado e pesquisa iniciada.
+2025-10-31 08:40:24,182 - aut-americanas - INFO - Elemento visível: ('-android uiautomator', 'new UiSelector().descriptionContains("Apple Watch se gps")')
+2025-10-31 08:40:24,455 - aut-americanas - INFO - Clicou no elemento: ('-android uiautomator', 'new UiSelector().descriptionContains("Apple Watch se gps")')
+✅ Produto encontrado e aberto.
+2025-10-31 08:40:25,474 - aut-americanas - INFO - Texto do elemento ('xpath', '//android.view.View[@content-desc="Apple Watch se gps Caixa prateada de alumínio – 44 mm Pulseira esportiva denim – p/m"]'): 
+2025-10-31 08:40:25,627 - aut-americanas - INFO - Texto do elemento ('xpath', "//android.view.View[contains(@content-desc, '3.529,00')]"): 
+🔽 Iniciando scroll até encontrar o campo de CEP...
+🔁 Scroll realizado (1/8)...
+✅ Campo CEP encontrado após 2 scroll(s).
+🗑️ CEP anterior apagado com sucesso.
+📮 CEP inválido digitado com sucesso.
+🧮 Botão 'Calcular' clicado para CEP inválido.
+📮 CEP válido '50710330' digitado com sucesso.
+🧮 Botão 'Calcular' clicado para CEP válido.
+⚠️ Erro no ciclo do produto 'Apple Watch se gps Caixa prateada de alumínio – 44 mm Pulseira esportiva denim – p/m': Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Users/lpsp/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-android-driver/lib/commands/find.ts:86:11)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/usr/local/lib/node_modules/appium/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at AndroidUiautomator2Driver.findElement (/usr/local/lib/node_modules/appium/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+2025-10-31 08:41:09 [ERROR] - Erro no ciclo do produto 'Apple Watch se gps Caixa prateada de alumínio – 44 mm Pulseira esportiva denim – p/m': Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Users/lpsp/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-android-driver/lib/commands/find.ts:86:11)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/usr/local/lib/node_modules/appium/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at AndroidUiautomator2Driver.findElement (/usr/local/lib/node_modules/appium/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+📝 Erro registrado em logs/erros.log: Erro no ciclo do produto 'Apple Watch se gps Caixa prateada de alumínio – 44 mm Pulseira esportiva denim – p/m': Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Users/lpsp/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-android-driver/lib/commands/find.ts:86:11)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/usr/local/lib/node_modules/appium/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at AndroidUiautomator2Driver.findElement (/usr/local/lib/node_modules/appium/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+💾 Vídeo salvo em: logs/videos/Apple_Watch_se_gps_Caixa_prateada_de_alumínio___44_mm_Pulseira_esportiva_denim___p_m_2025-10-31_08-41-11.mp4
+
+🔁 Iniciando ciclo 3/3 para: Apple MacBook Air 13, M3, cpu de 8 núcleos, gpu de 8 núcleos, 24GB ram, 512GB ssd - Meia-noite
+🧾 Verificando banner promocional...
+2025-10-31 08:41:23,278 - aut-americanas - INFO - Verificando banner promocional...
+2025-10-31 08:41:33,926 - aut-americanas - INFO - Clicou no elemento: ('accessibility id', 'Close')
+2025-10-31 08:41:33,926 - aut-americanas - INFO - Banner fechado com sucesso.
+✅ Nenhum banner impedindo o fluxo.
+🎥 Iniciando gravação de vídeo...
+🔎 Iniciando busca pelo produto: Apple MacBook Air 13, M3, cpu de 8 núcleos, gpu de 8 núcleos, 24GB ram, 512GB ssd - Meia-noite
+2025-10-31 08:41:35,813 - aut-americanas - INFO - Elemento visível: ('accessibility id', 'busque aqui seu produto')
+⚠️ Ícone de busca não encontrado — seguindo mesmo assim.
+⌨️ Produto digitado e pesquisa iniciada.
+2025-10-31 08:41:41,558 - aut-americanas - INFO - Elemento visível: ('-android uiautomator', 'new UiSelector().descriptionContains("Apple MacBook Air 13, M3")')
+2025-10-31 08:41:42,608 - aut-americanas - INFO - Clicou no elemento: ('-android uiautomator', 'new UiSelector().descriptionContains("Apple MacBook Air 13, M3")')
+✅ Produto encontrado e aberto.
+2025-10-31 08:41:42,909 - aut-americanas - INFO - Texto do elemento ('xpath', '//android.view.View[@content-desc="Apple MacBook Air 13, M3, cpu de 8 núcleos, gpu de 8 núcleos, 24GB ram, 512GB ssd - Meia-noite"]'): 
+2025-10-31 08:41:43,103 - aut-americanas - INFO - Texto do elemento ('xpath', "//android.view.View[contains(@content-desc, '18.589,00')]"): 
+🔽 Iniciando scroll até encontrar o campo de CEP...
+🔁 Scroll realizado (1/8)...
+✅ Campo CEP encontrado após 2 scroll(s).
+🗑️ CEP anterior apagado com sucesso.
+📮 CEP inválido digitado com sucesso.
+🧮 Botão 'Calcular' clicado para CEP inválido.
+📮 CEP válido '50710330' digitado com sucesso.
+🧮 Botão 'Calcular' clicado para CEP válido.
+⚠️ Erro no ciclo do produto 'Apple MacBook Air 13, M3, cpu de 8 núcleos, gpu de 8 núcleos, 24GB ram, 512GB ssd - Meia-noite': Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Users/lpsp/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-android-driver/lib/commands/find.ts:86:11)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/usr/local/lib/node_modules/appium/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at AndroidUiautomator2Driver.findElement (/usr/local/lib/node_modules/appium/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+2025-10-31 08:42:20 [ERROR] - Erro no ciclo do produto 'Apple MacBook Air 13, M3, cpu de 8 núcleos, gpu de 8 núcleos, 24GB ram, 512GB ssd - Meia-noite': Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Users/lpsp/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-android-driver/lib/commands/find.ts:86:11)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/usr/local/lib/node_modules/appium/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at AndroidUiautomator2Driver.findElement (/usr/local/lib/node_modules/appium/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+📝 Erro registrado em logs/erros.log: Erro no ciclo do produto 'Apple MacBook Air 13, M3, cpu de 8 núcleos, gpu de 8 núcleos, 24GB ram, 512GB ssd - Meia-noite': Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (/Users/lpsp/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-android-driver/lib/commands/find.ts:86:11)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (/usr/local/lib/node_modules/appium/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:60:12)
+    at AndroidUiautomator2Driver.findElement (/usr/local/lib/node_modules/appium/node_modules/@appium/base-driver/lib/basedriver/commands/find.ts:75:12)
+💾 Vídeo salvo em: logs/videos/Apple_MacBook_Air_13__M3__cpu_de_8_núcleos__gpu_de_8_núcleos__24GB_ram__512GB_ssd___Meia_noite_2025-10-31_08-42-22.mp4
+🎯 Teste finalizado com sucesso para todos os produtos.
+PASSED                                                                   [100%]2025-10-31 08:42:27,627 - aut-americanas - INFO - Encerrando driver Appium.
+
+
+=============================== warnings summary ===============================
+americanas/lib/python3.9/site-packages/urllib3/__init__.py:35
+  /Users/lpsp/Documents/aut-americanas/americanas/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=================== 1 passed, 1 warning in 233.43s (0:03:53) ===================
