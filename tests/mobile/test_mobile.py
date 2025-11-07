@@ -51,11 +51,11 @@ def test_purchase_flow_mobile(mobile_driver):
         try:
             # -> abrir o app pelo ícone
             driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value="Predicted app: Americanas").click()
-            time.sleep(6)
+            
 
             # -> fechar banner promocional se aparecer
             try:
-                print("🧾 Verificando banner promocional...")
+                print("Verificando banner promocional...")
                 base.close_promo_banner_if_present(MobileLocators.BANNER_CLOSE)
                 print("✅ Nenhum banner impedindo o fluxo.")
             except Exception as e:
@@ -65,18 +65,12 @@ def test_purchase_flow_mobile(mobile_driver):
             start_recording(driver)
 
             # ---- 3) Buscar produto ----
-            print(f"🔎 Iniciando busca pelo produto: {product_name}")
+            print(f"Iniciando busca pelo produto: {product_name}")
             base.wait_for_element(MobileLocators.SEARCH_BAR, timeout=10)
             search_bar = driver.find_element(*MobileLocators.SEARCH_BAR)
             search_bar.click()
 
-            # try:
-            #     search_icon = driver.find_element(*MobileLocators.SEARCH_ICON)
-            #     search_icon.click()
-            #     print("🖱️ Ícone de busca clicado com sucesso.")
-            # except Exception:
-            #     print("⚠️ Ícone de busca não encontrado — seguindo mesmo assim.")
-
+           
             time.sleep(1)
             search_input = driver.switch_to.active_element
             search_input.send_keys(product_name)
@@ -253,3 +247,4 @@ def test_purchase_flow_mobile(mobile_driver):
         time.sleep(2)
 
     print(" Teste finalizado com sucesso para todos os produtos.")
+

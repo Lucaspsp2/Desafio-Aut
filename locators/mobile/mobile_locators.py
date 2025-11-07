@@ -15,21 +15,21 @@ class MobileLocators:
 
     # Resultado de pesquisa (primeiro item)
     SEARCH_RESULT_ITEM = (AppiumBy.ANDROID_UIAUTOMATOR,
-                          'new UiSelector().descriptionStartsWith("Apple iPhone 17 Pro Max 256GB")')
+                          'new UiSelector().descriptionContains("iPhone 17 Pro Max")')
     SEARCH_RESULT_ITEM2 = (AppiumBy.ANDROID_UIAUTOMATOR,
-                           'new UiSelector().descriptionContains("Apple Watch se gps")')
+                          'new UiSelector().descriptionContains("Apple Watch Series 10 gps")')
     SEARCH_RESULT_ITEM3 = (AppiumBy.ANDROID_UIAUTOMATOR,
                            'new UiSelector().descriptionContains("Apple MacBook Air 13, M3")')
 
     # Nome dos produtos (xpath específicos que o inspector trouxe)
-    PRODUCT_NAME_1 = ('xpath', '//android.view.View[@content-desc="Apple iPhone 17 Pro Max 256GB Prateado"]')
+    PRODUCT_NAME_1 = ('xpath', '//android.view.View[@content-desc="Apple iPhone 17 Pro Max 256GB Laranja-cósmico"]')
     PRODUCT_NAME_2 = ('xpath', '//android.view.View[@content-desc="Apple Watch se gps Caixa prateada de alumínio – 44 mm Pulseira esportiva denim – p/m"]')
     PRODUCT_NAME_3 = ('xpath', '//android.view.View[@content-desc="Apple MacBook Air 13, M3, cpu de 8 núcleos, gpu de 8 núcleos, 24GB ram, 512GB ssd - Meia-noite"]')
 
     # Preços dos produtos
-    PRODUCT_PRICE_1 = ('xpath', "//android.view.View[contains(@content-desc, '13.498,80')]")
-    PRODUCT_PRICE_2 = ('xpath', "//android.view.View[contains(@content-desc, '3.529,00')]")
-    PRODUCT_PRICE_3 = ('xpath', "//android.view.View[contains(@content-desc, '18.589,00')]")
+    PRODUCT_PRICE_1 = ('xpath', "//android.view.View[contains(@content-desc, '15.499,00')]")
+    PRODUCT_PRICE_2 = ('xpath', "//android.view.View[contains(@content-desc, '4.749,00')]")
+    PRODUCT_PRICE_3 = ('xpath', "//android.view.View[contains(@content-desc, '12.949,00')]")
 
     # CEP / entrega
     ZIP_INPUT = (AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().textContains("Digite o CEP")')
@@ -69,3 +69,4 @@ class MobileLocators:
 
     # Modal / Fechar carrinho (se houver)
     CLOSE_CART_MODAL = (AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().textContains("Fechar modal carrinho")')
+
