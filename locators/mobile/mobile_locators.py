@@ -15,19 +15,19 @@ class MobileLocators:
 
     # Resultado de pesquisa (primeiro item)
     SEARCH_RESULT_ITEM = (AppiumBy.ANDROID_UIAUTOMATOR,
-                          'new UiSelector().descriptionContains("iPhone 17 Pro Max")')
+                          'new UiSelector().descriptionContains("iPhone 15 de 128GB")')
     SEARCH_RESULT_ITEM2 = (AppiumBy.ANDROID_UIAUTOMATOR,
                           'new UiSelector().descriptionContains("Apple Watch Series 10 gps")')
     SEARCH_RESULT_ITEM3 = (AppiumBy.ANDROID_UIAUTOMATOR,
                            'new UiSelector().descriptionContains("Apple MacBook Air 13, M3")')
 
     # Nome dos produtos (xpath específicos que o inspector trouxe)
-    PRODUCT_NAME_1 = ('xpath', '//android.view.View[@content-desc="Apple iPhone 17 Pro Max 256GB Laranja-cósmico"]')
-    PRODUCT_NAME_2 = ('xpath', '//android.view.View[@content-desc="Apple Watch se gps Caixa prateada de alumínio – 44 mm Pulseira esportiva denim – p/m"]')
-    PRODUCT_NAME_3 = ('xpath', '//android.view.View[@content-desc="Apple MacBook Air 13, M3, cpu de 8 núcleos, gpu de 8 núcleos, 24GB ram, 512GB ssd - Meia-noite"]')
+    PRODUCT_NAME_1 = ('xpath', '//android.view.View[@content-desc="Apple iPhone 15 de 128GB - Preto"]')
+    PRODUCT_NAME_2 = ('xpath', "//*[contains(@content-desc, 'Watch Series 10 gps')]")
+    PRODUCT_NAME_3 = (AppiumBy.ANDROID_UIAUTOMATOR,'new UiSelector().descriptionContains("Apple MacBook Air 13, M3")')
 
     # Preços dos produtos
-    PRODUCT_PRICE_1 = ('xpath', "//android.view.View[contains(@content-desc, '15.499,00')]")
+    PRODUCT_PRICE_1 = ('xpath', "//android.view.View[contains(@content-desc, '5.199,00')]")
     PRODUCT_PRICE_2 = ('xpath', "//android.view.View[contains(@content-desc, '4.749,00')]")
     PRODUCT_PRICE_3 = ('xpath', "//android.view.View[contains(@content-desc, '12.949,00')]")
 
