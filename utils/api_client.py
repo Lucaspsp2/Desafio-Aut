@@ -1,4 +1,3 @@
-# aut-americanas/utils/api_client.py
 import requests
 from utils.logger import log
 

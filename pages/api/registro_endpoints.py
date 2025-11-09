@@ -1,4 +1,3 @@
-# aut-americanas/pages/api/registro_endpoints.py
 from utils.api_client import APIClient
 
 class RegistroEndpoints:
@@ -11,12 +10,12 @@ class RegistroEndpoints:
         self.client = client
 
     # Cenário 8, 9, 10 (Registro)
-    def register_user(self, email, password, username): # ⬅️ ADICIONADO username aqui
+    def register_user(self, email, password, username): 
         """Envia requisição para registrar um novo usuário."""
         payload = {
             "email": email, 
             "password": password,
-            "username": username # ⬅️ ADICIONADO ao payload
+            "username": username 
         }
         return self.client.post(self.REGISTER_ENDPOINT, json_data=payload)
                                 

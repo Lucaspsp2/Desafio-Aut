@@ -1,4 +1,3 @@
-# aut-americanas/utils/data_generator.py
 import time
 import uuid
 import random
@@ -14,7 +13,7 @@ class DataGenerator:
         return f"api_test_{unique_id}_{timestamp}@testmail.com"
 
     @staticmethod
-    def generate_unique_username(): # ⬅️ ADICIONADO
+    def generate_unique_username(): 
         """Gera um nome de usuário único."""
         unique_id = str(uuid.uuid4())[:8].replace('-', '') # Limita e remove traços
         timestamp = int(time.time())

@@ -1,4 +1,3 @@
-# aut-americanas/pages/api/wishlist_endpoints.py
 from utils.api_client import APIClient
 
 class WishlistEndpoints:
@@ -10,7 +9,7 @@ class WishlistEndpoints:
     def __init__(self, client: APIClient):
         self.client = client
         
-    # --- Métodos de Wishlist (Cenários 14, 15, 17, 18, 19) ---
+    #  Métodos de Wishlist (Cenários 14, 15, 17, 18, 19) 
 
     def create_wishlist(self, token, name):
         """Cenário 14: Cria uma nova wishlist."""
@@ -23,7 +22,7 @@ class WishlistEndpoints:
         headers = {"Authorization": f"Bearer {token}"}
         return self.client.get(self.WISHLISTS_ENDPOINT, headers=headers)
     
-    # --- Métodos de Produto (Cenários 21, 25, 26, 27) ---
+    # Métodos de Produto (Cenários 21, 25, 26, 27)
     
     def add_product_to_wishlist(self, token, wishlist_id, product_data):
         """Cenário 21: Adiciona um produto a uma wishlist específica."""
@@ -37,7 +36,7 @@ class WishlistEndpoints:
         endpoint = f"{self.WISHLISTS_ENDPOINT}/{wishlist_id}/products"
         return self.client.get(endpoint, params=filters, headers=headers)
 
-    # --- Métodos de Ação em Produto (Cenários 29, 32) ---
+    # Métodos de Ação em Produto (Cenários 29, 32)
     
     def update_product(self, token, product_id, update_data):
         """Cenário 29: Atualiza detalhes de um produto existente."""
@@ -56,4 +55,4 @@ class WishlistEndpoints:
         headers = {"Authorization": f"Bearer {token}"}
         endpoint = f"{self.PRODUCTS_ENDPOINT}/{product_id}/toggle"
         # O endpoint PATCH geralmente não precisa de corpo, a ação está na URL.
-        return self.client.put(endpoint, headers=headers) # Assumindo que a API usa PUT em vez de PATCH
+        return self.client.put(endpoint, headers=headers) 

@@ -70,7 +70,6 @@ def unique_registered_user(registro_api):
         )
 
     # 2. FAZ LOGIN PARA OBTER O TOKEN
-    # Como a API de Registro (200) não retorna o token, preciso fazer o Login.
     response_login = registro_api.login_user(email, password)
     
     assert response_login.status_code == 200, (
@@ -140,7 +139,7 @@ def created_product(created_wishlist, wishlist_api):
         "Zipcode": "12345678",
         # NOVOS CAMPOS ADICIONADOS:
         "delivery_estimate": "5 dias úteis",  
-        "shipping_fee": "10.50"               # Uma string ou o formato esperado pela API
+        "shipping_fee": "10.50"               
     }
     response = wishlist_api.add_product_to_wishlist(
         created_wishlist["token"], 
@@ -152,7 +151,6 @@ def created_product(created_wishlist, wishlist_api):
     if response.status_code != 200:
         # Se o status não for 200, loga o código e o corpo para entender o 500
         log.error(f"Erro na fixture created_product. Status: {response.status_code}. Corpo: {response.text}")
-    # --- FIM NOVO TRECHO DE DEBUG ---
     
     assert response.status_code == 200
     

@@ -1,24 +1,19 @@
 from selenium.webdriver.common.by import By
 
-# -----------------------------
 # URLs base dos sites
-# -----------------------------
 class URLs:
     TEMP_MAIL = "https://temp-mail.io/en"
     AMERICANAS_HOME = "https://www.americanas.com.br/"
 
-# -----------------------------
 # Locators da TempMailPage
-# -----------------------------
 class TempMailLocators:
-    EMAIL_FIELD = (By.CSS_SELECTOR, 'input[data-qa="current-email"]')  # campo do email temporário
-    FIRST_EMAIL_ROW = (By.CSS_SELECTOR, '[data-qa="message"]')  # linha do primeiro email recebido
+    EMAIL_FIELD = (By.CSS_SELECTOR, 'input[data-qa="current-email"]') 
+    FIRST_EMAIL_ROW = (By.CSS_SELECTOR, '[data-qa="message"]') 
 
     # Novo locator para o código dentro do e-mail
     VERIFICATION_CODE = (By.CSS_SELECTOR, "span[data-qa='message-subject']")
-# -----------------------------
+
 # Locators da LoginPageWeb
-# -----------------------------
 class LoginPageLocators:
     BANNER_CLOSE_BUTTON = (By.ID, "close-button-1454703513200")
     LOGIN_SIGNUP_LINK = (By.CSS_SELECTOR, 'a.ButtonLogin_Container__sgzuk')

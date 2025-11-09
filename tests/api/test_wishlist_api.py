@@ -2,8 +2,6 @@ import pytest
 from utils.data_generator import DataGenerator
 from utils.logger import log
 
-# As fixtures 'wishlist_api', 'registro_api', 'default_auth_token', 
-# 'unique_auth_token', 'created_wishlist', etc. serão injetadas do conftest.py
 
 PRODUCT_BASE_DATA = {
     "Product": "Laptop Teste", 
@@ -105,9 +103,8 @@ def test_scenario_20_retrieve_wishlists_unauthenticated(wishlist_api):
     log.info(f"Cenário 20: Recuperação sem autenticação rejeitada (401).")
 
 
-# ----------------------------------------
+
 # TESTES DE PRODUTO: ADICIONAR E LER (Cenários 21, 22, 23, 24, 25, 26, 27, 28)
-# ----------------------------------------
 
 @pytest.mark.api
 def test_scenario_21_successful_add_product(wishlist_api, created_wishlist):
@@ -139,8 +136,6 @@ def test_scenario_22_add_product_non_existent_wishlist(wishlist_api, unique_auth
 def test_scenario_23_add_product_another_user_wishlist(registro_api, wishlist_api, created_wishlist):
     """Scenario 23: Adicionar produto a wishlist de outro usuário. (CORRIGIDO)"""
     
-    # 1. Obtemos o token do usuário padrão (que é diferente do dono da created_wishlist)
-    # Tivemos que injetar registro_api para garantir que funciona sem a fixture default_auth_token se necessário.
     response_login = registro_api.login_user("projeto@example.com", "Senha123!") 
     another_user_token = response_login.json()["access_token"]
     
@@ -165,7 +160,6 @@ def test_scenario_24_add_product_incomplete_data(wishlist_api, created_wishlist)
     assert response.status_code == 422, f"Status esperado 422, obteve {response.status_code}"
     response_json = response.json()
     
-    # 🛠️ Aplicando robustez para 422 (igual Cenário 17)
     error_details = response_json.get("detail", {})
     if not isinstance(error_details, list):
         error_details = [{"msg": str(error_details)}]
@@ -242,10 +236,7 @@ def test_scenario_28_retrieve_products_another_user_wishlist(wishlist_api, creat
     assert "Wishlist not found" in response.json().get("detail", "")
     log.info(f"Cenário 28: Recuperação de produtos de outro usuário rejeitada (404).")
 
-
-# ----------------------------------------
 # TESTES DE PRODUTO: ATUALIZAR (Cenários 29, 30, 31)
-# ----------------------------------------
 
 @pytest.mark.api
 def test_scenario_29_successful_update_product(wishlist_api, created_product):
@@ -332,10 +323,8 @@ def test_scenario_34_delete_another_user_product(wishlist_api, created_product, 
     log.info(f"Cenário 34: Deleção de produto de outro usuário rejeitada (404).")
 
 
-# ----------------------------------------
-# TESTES GERAIS DE AUTENTICAÇÃO (Cenários 35, 36)
-# ----------------------------------------
 
+# TESTES GERAIS DE AUTENTICAÇÃO (Cenários 35, 36)
 
 # Lista de TUPLAS que definem a chamada do endpoint:
 # (Função de Serviço, Argumentos necessários (além do token))
@@ -366,7 +355,7 @@ ENDPOINT_CALLS = [
 def test_scenario_35_access_endpoint_without_token(api_call, wishlist_api):
     """Scenario 35: Acessar endpoints protegidos sem token."""
     
-    # Chamada: passamos wishlist_api como 'api' e um token inválido como 'token'
+    # passei wishlist_api como 'api' e um token inválido como 'token'
     # 'invalid_token_format' no conftest está sendo usado para simular a ausência
     response = api_call(wishlist_api, "invalid_token_format") 
     

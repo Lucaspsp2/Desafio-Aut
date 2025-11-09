@@ -8,12 +8,13 @@ __pycache__
 *.pyc
 
 # Arquivos de Evidência e Relatórios (Grandes e Gerados)
+logs/
+allure-report/
 artifacts/
 report_allure/
-allure-results/  # Pasta onde os metadados do Allure são salvos
-*.png            # Screenshots
-*.mp4            # Vídeos da execução
-
+allure-results/  
+*.png            
+*.mp4            
 # Configurações Locais
 .pytest_cache/
 .DS_Store

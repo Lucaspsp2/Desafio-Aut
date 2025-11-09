@@ -1,5 +1,4 @@
 import os
-import time
 from datetime import datetime
 
 def start_recording(driver):
@@ -8,9 +7,9 @@ def start_recording(driver):
     """
     try:
         driver.start_recording_screen()
-        print("🎥 Iniciando gravação de vídeo...")
+        print("Iniciando gravação de vídeo...")
     except Exception as e:
-        print(f"⚠️ Falha ao iniciar gravação: {e}")
+        print(f"Falha ao iniciar gravação: {e}")
 
 def stop_recording(driver, product_name, save_on_error=False):
     """
@@ -30,10 +29,10 @@ def stop_recording(driver, product_name, save_on_error=False):
             with open(file_path, "wb") as f:
                 import base64
                 f.write(base64.b64decode(raw_data))
-            print(f"💾 Vídeo salvo em: {file_path}")
+            print(f"Vídeo salvo em: {file_path}")
         else:
-            print("🧹 Teste passou — vídeo descartado.")
+            print("Teste passou — vídeo descartado.")
 
     except Exception as e:
-        print(f"⚠️ Falha ao encerrar gravação: {e}")
+        print(f"Falha ao encerrar gravação: {e}")
 

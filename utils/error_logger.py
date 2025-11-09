@@ -1,6 +1,5 @@
 import os
 import logging
-from datetime import datetime
 
 # Configuração do arquivo geral de erros
 LOG_DIR = "logs"
@@ -18,4 +17,4 @@ def log_failure(message):
     Registra falhas no arquivo de log central.
     """
     logging.error(message)
-    print(f"📝 Erro registrado em logs/erros.log: {message}")
+    print(f"Erro registrado em logs/erros.log: {message}")

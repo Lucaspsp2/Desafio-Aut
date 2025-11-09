@@ -33,32 +33,32 @@ class MobileLocators:
 
     # CEP / entrega
     ZIP_INPUT = (AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().textContains("Digite o CEP")')
-    ZIP_INPUT_BY_RESOURCE = (AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().resourceId("Digite o CEP")')  # fallback
+    ZIP_INPUT_BY_RESOURCE = (AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().resourceId("Digite o CEP")')  
     CLEAR_ZIP_BUTTON = (AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().description("Apagar cep pesquisado")')
     CALCULATE_BUTTON = (AppiumBy.ACCESSIBILITY_ID, "Calcular")
     ZIP_VALIDATION_TEXT = (AppiumBy.ACCESSIBILITY_ID, "Receba em até 8 dias úteis: Grátis")
 
     # Comprar/Add
     BUY_BUTTON = (AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().textContains("comprar")')
-    BUY_NOW = (AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().resourceId("Comprar agora")')  # inspector
+    BUY_NOW = (AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().resourceId("Comprar agora")')  
     CARD_PRODUCT = (AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().resourceId("Card Produto")')
     ADD_CONTINUE = (AppiumBy.ACCESSIBILITY_ID, "adicionar e continuar comprando")
 
     # Carrinho final / quantidades
     CART_ICON = (AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().resourceId("Carrinho")')
-    CART_RESOURCE = (AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().resourceId("Carrinho")')  # sinônimo
-    CART_COUNT = (AppiumBy.ACCESSIBILITY_ID, "Cesta")  # texto dinâmico, cheque parcial
+    CART_RESOURCE = (AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().resourceId("Carrinho")')  
+    CART_COUNT = (AppiumBy.ACCESSIBILITY_ID, "Cesta") 
     CART_PRODUCT_NAME = (AppiumBy.ACCESSIBILITY_ID, "product_in_cart_name")
-    CART_PRODUCT_NAME_XPATH_CONTAINS = ('xpath', "//*[contains(@content-desc, 'Apple iPhone 17 Pro Max 256GB')]")  # exemplo
+    CART_PRODUCT_NAME_XPATH_CONTAINS = ('xpath', "//*[contains(@content-desc, 'Apple iPhone 17 Pro Max 256GB')]")  
     INCREASE_QTY_BUTTON = (AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().resourceId("Aumentar quantidade em 1")')
     DECREASE_QTY_BUTTON = (AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().resourceId("Reduzir quantidade em 1")')
     QUANTITY_FIELD = (AppiumBy.CLASS_NAME, "android.widget.EditText")
-    CART_QTY_TEXT_CONTAINS_2 = (AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().textContains("2")')  # fallback para checar "2"
+    CART_QTY_TEXT_CONTAINS_2 = (AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().textContains("2")')  
 
     # Totais / botão fechar pedido
     PRODUCT_TOTAL = (AppiumBy.ACCESSIBILITY_ID, "product_total")
-    ORDER_TOTAL_BUTTON = (AppiumBy.ACCESSIBILITY_ID, "fechar pedido")  # texto + valor pode estar no mesmo elemento
-    ORDER_TOTAL_BUTTON_XPATH = (AppiumBy.XPATH, "//*[contains(@content-desc, 'fechar pedido')]")  # fallback para extrair content-desc com valor
+    ORDER_TOTAL_BUTTON = (AppiumBy.ACCESSIBILITY_ID, "fechar pedido")  
+    ORDER_TOTAL_BUTTON_XPATH = (AppiumBy.XPATH, "//*[contains(@content-desc, 'fechar pedido')]")  
 
     # Checkout / finalização
     CHECKOUT_BUTTON = (AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().resourceId("Fechar pedido")')

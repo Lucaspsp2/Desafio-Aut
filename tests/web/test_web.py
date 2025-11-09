@@ -19,7 +19,7 @@ def test_new_user_registration_and_password_setup(web_driver):
     web_driver.get(URLs.AMERICANAS_HOME)
     # Espera a página inicial carregar (ex: botão de login visível)
     wait.until(EC.visibility_of_element_located(LoginPageLocators.LOGIN_SIGNUP_LINK))
-    log.info("✅ Página inicial carregada")
+    log.info("Página inicial carregada")
 
     # Fecha banner se existir
     try:
@@ -28,14 +28,14 @@ def test_new_user_registration_and_password_setup(web_driver):
             base_page.click_element(LoginPageLocators.BANNER_CLOSE_BUTTON)
             # Espera o banner desaparecer
             wait.until(EC.invisibility_of_element_located(LoginPageLocators.BANNER_CLOSE_BUTTON))
-            log.info("✅ Banner fechado com sucesso")
+            log.info("Banner fechado com sucesso")
     except Exception:
         log.info("Nenhum Banner para fechar")
 
     # Navega para Login/SignUp
     base_page.click_element(LoginPageLocators.LOGIN_SIGNUP_LINK)
     wait.until(EC.visibility_of_element_located(LoginPageLocators.EMAIL_INPUT))
-    log.info("✅ Página de login aberta com sucesso")
+    log.info("Página de login aberta com sucesso")
 
     # ABRE TEMP MAIL em nova aba
     web_driver.execute_script("window.open('');")
@@ -55,10 +55,10 @@ def test_new_user_registration_and_password_setup(web_driver):
     # Preenche e-mail no cadastro e envia
     wait.until(EC.visibility_of_element_located(LoginPageLocators.EMAIL_INPUT))
     base_page.safe_send_keys(LoginPageLocators.EMAIL_INPUT, temp_email)
-    log.info("✅ E-mail inserido no cadastro")
+    log.info("E-mail inserido no cadastro")
     base_page.click_element(LoginPageLocators.CONTINUAR_BUTTON)
     wait.until(EC.visibility_of_element_located(LoginPageLocators.CODE_INPUT))
-    log.info("✅ Campo de código de verificação visível")
+    log.info("Campo de código de verificação visível")
 
     # CAPTURA CÓDIGO DE VERIFICAÇÃO DO E-MAIL
     web_driver.switch_to.window(web_driver.window_handles[1])
@@ -75,8 +75,8 @@ def test_new_user_registration_and_password_setup(web_driver):
     # Extrai apenas os dígitos do código
     match = re.search(r"\b(\d{6})\b", verification_text)
     verification_code = match.group(1) if match else None
-    assert verification_code is not None, "❌ Código de verificação não encontrado no e-mail."
-    log.info(f"✅ Código de verificação capturado: {verification_code}")
+    assert verification_code is not None, "Código de verificação não encontrado no e-mail."
+    log.info(f"Código de verificação capturado: {verification_code}")
 
     # CONFIRMA REGISTRO
     web_driver.switch_to.window(web_driver.window_handles[0])
@@ -88,8 +88,8 @@ def test_new_user_registration_and_password_setup(web_driver):
     user_header = wait.until(
         EC.visibility_of_element_located(LoginPageLocators.USER_HEADER_LINK)
     )
-    assert user_header, "❌ Login não confirmado."
-    log.info(f"✅ Login confirmado para o usuário: {user_header.text.strip()}")
+    assert user_header, "Login não confirmado."
+    log.info(f"Login confirmado para o usuário: {user_header.text.strip()}")
 
     # ACESSA MINHA CONTA E AUTENTICAÇÃO
     base_page.click_element(LoginPageLocators.MINHA_CONTA_MENU)
@@ -99,7 +99,7 @@ def test_new_user_registration_and_password_setup(web_driver):
         EC.element_to_be_clickable(LoginPageLocators.SET_PASSWORD_BUTTON)
     )
     set_password_button.click() 
-    log.info("✅ Botão 'Definir senha' clicado com sucesso")
+    log.info("Botão 'Definir senha' clicado com sucesso")
 
     # CAPTURA CÓDIGO DE SENHA NO TEMP MAIL
     web_driver.switch_to.window(web_driver.window_handles[1])
@@ -116,14 +116,14 @@ def test_new_user_registration_and_password_setup(web_driver):
     ).text
     match = re.search(r"\b(\d{6})\b", password_email_text)
     password_code = match.group(1) if match else None
-    assert password_code is not None, "❌ Código de senha não encontrado no e-mail."
+    assert password_code is not None, "Código de senha não encontrado no e-mail."
     log.info(f"Código de senha recebido: {password_code}")
 
     # INSERE CÓDIGO DE SENHA
     web_driver.switch_to.window(web_driver.window_handles[0])
     wait.until(EC.visibility_of_element_located(LoginPageLocators.SECOND_CODE_INPUT))
     base_page.safe_send_keys(LoginPageLocators.SECOND_CODE_INPUT, password_code)
-    log.info("✅ Código de redefinição de senha inserido")
+    log.info("Código de redefinição de senha inserido")
 
     # TESTE DAS REGRAS DE SENHA
     password_field = base_page._wait_for_element(LoginPageLocators.NEW_PASSWORD_INPUT)
@@ -132,28 +132,28 @@ def test_new_user_registration_and_password_setup(web_driver):
     password_field.send_keys("Ab1")
     time.sleep(1)
     assert "valid" not in base_page._wait_for_element(LoginPageLocators.RULE_8_CHAR).get_attribute("class"), \
-        "❌ Regra de 8 caracteres marcada como válida incorretamente"
+        "Regra de 8 caracteres marcada como válida incorretamente"
 
     # Sem números
     password_field.send_keys(Keys.COMMAND, "a", Keys.DELETE)
     password_field.send_keys("SenhaValida")
     time.sleep(1)
     assert "valid" not in base_page._wait_for_element(LoginPageLocators.RULE_NUMBER).get_attribute("class"), \
-        "❌ Regra de número marcada como válida incorretamente"
+        "Regra de número marcada como válida incorretamente"
 
     # Sem letras minúsculas
     password_field.send_keys(Keys.COMMAND, "a", Keys.DELETE)
     password_field.send_keys("SENHA123")
     time.sleep(1)
     assert "valid" not in base_page._wait_for_element(LoginPageLocators.RULE_LOWERCASE).get_attribute("class"), \
-        "❌ Regra de minúscula marcada como válida incorretamente"
+        "Regra de minúscula marcada como válida incorretamente"
 
     # Sem letras maiúsculas
     password_field.send_keys(Keys.COMMAND, "a", Keys.DELETE)
     password_field.send_keys("senha123")
     time.sleep(1)
     assert "valid" not in base_page._wait_for_element(LoginPageLocators.RULE_UPPERCASE).get_attribute("class"), \
-        "❌ Regra de maiúscula marcada como válida incorretamente"
+        "Regra de maiúscula marcada como válida incorretamente"
 
     # DEFINE SENHA VÁLIDA
     password_field.send_keys(Keys.COMMAND, "a", Keys.DELETE)
@@ -164,5 +164,5 @@ def test_new_user_registration_and_password_setup(web_driver):
     success_indicator = WebDriverWait(web_driver, 5).until(
         EC.visibility_of_element_located(LoginPageLocators.PASSWORD_SUCCESS_ASTERIKS)
     )
-    assert success_indicator is not None, "❌ Falha ao salvar a senha válida"
-    log.info("✅ Fluxo de teste de regras de senha e definição de senha concluído com sucesso")
+    assert success_indicator is not None, "Falha ao salvar a senha válida"
+    log.info("Fluxo de teste de regras de senha e definição de senha concluído com sucesso")

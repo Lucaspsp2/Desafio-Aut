@@ -46,7 +46,7 @@ def test_purchase_flow_mobile(mobile_driver):
         product_price = p["Price"]
         product_zip = p.get("Zipcode", "50710330")
 
-        print(f"\n🔁 Iniciando ciclo {idx}/{len(products)} para: {product_name}")
+        print(f"\n Iniciando ciclo {idx}/{len(products)} para: {product_name}")
 
         try:
             # -> abrir o app pelo ícone
@@ -57,11 +57,11 @@ def test_purchase_flow_mobile(mobile_driver):
             try:
                 print("Verificando banner promocional...")
                 base.close_promo_banner_if_present(MobileLocators.BANNER_CLOSE)
-                print("✅ Nenhum banner impedindo o fluxo.")
+                print("Nenhum banner impedindo o fluxo.")
             except Exception as e:
-                print(f"⚠️ Erro ao tentar fechar banner (ignorando): {e}")
+                print(f"Erro ao tentar fechar banner (ignorando): {e}")
 
-            # 🎥 Iniciar gravação do teste
+            # Iniciar gravação do teste
             start_recording(driver)
 
             # ---- 3) Buscar produto ----
@@ -122,7 +122,7 @@ def test_purchase_flow_mobile(mobile_driver):
                     start_y = int(size['height'] * 0.75)
                     end_y = int(size['height'] * 0.35)
                     driver.swipe(start_x, start_y, start_x, end_y, 700)
-                    print(f"🔁 Scroll realizado ({scroll_attempts+1}/{max_scrolls})...")
+                    print(f"Scroll realizado ({scroll_attempts+1}/{max_scrolls})...")
                     time.sleep(1)
                 scroll_attempts += 1
 
@@ -182,48 +182,48 @@ def test_purchase_flow_mobile(mobile_driver):
                base.click_element(MobileLocators.BUY_NOW)
                time.sleep(2)
 
-                # 2️⃣ Aumentar quantidade
+                # Aumentar quantidade
                base.wait_for_element(MobileLocators.INCREASE_QTY_BUTTON, timeout=8)
                base.click_element(MobileLocators.INCREASE_QTY_BUTTON)
                time.sleep(1)
 
-                # 3️⃣ Clicar no campo de quantidade (opcional)
+                # Clicar no campo de quantidade (opcional)
                base.wait_for_element(MobileLocators.QUANTITY_FIELD, timeout=5)
                base.click_element(MobileLocators.QUANTITY_FIELD)
                time.sleep(1)
 
-                # 4️⃣ Diminuir quantidade (duas vezes)
+                # Diminuir quantidade (duas vezes)
                base.wait_for_element(MobileLocators.DECREASE_QTY_BUTTON, timeout=8)
                base.click_element(MobileLocators.DECREASE_QTY_BUTTON)
                time.sleep(1)
                base.click_element(MobileLocators.DECREASE_QTY_BUTTON)
                time.sleep(1)
 
-                # 5️⃣ Aumentar novamente
+                # Aumentar novamente
                base.click_element(MobileLocators.INCREASE_QTY_BUTTON)
                time.sleep(1)
 
-                # 6️⃣ Adicionar e continuar comprando
+                # Adicionar e continuar comprando
                base.wait_for_element(MobileLocators.ADD_CONTINUE, timeout=10)
                base.click_element(MobileLocators.ADD_CONTINUE)
                time.sleep(2)
 
-                # 7️⃣ Abrir carrinho
+                # Abrir carrinho
                base.wait_for_element(MobileLocators.CART_ICON, timeout=10)
                base.click_element(MobileLocators.CART_ICON)
                time.sleep(2)
 
-                # 8️⃣ Calcular frete
+                # Calcular frete
                base.wait_for_element(MobileLocators.CALCULATE_BUTTON, timeout=10)
                base.click_element(MobileLocators.CALCULATE_BUTTON)
                time.sleep(2)
 
-                # 9️⃣ Fechar pedido
+                # Fechar pedido
                base.wait_for_element(MobileLocators.CHECKOUT_BUTTON, timeout=12)
                base.click_element(MobileLocators.CHECKOUT_BUTTON)
                time.sleep(2)
 
-                # 🔟 Validar tela "Informe seu e-mail para continuar"
+                # Validar tela "Informe seu e-mail para continuar"
                base.wait_for_element(MobileLocators.EMAIL_CONTINUE_MESSAGE, timeout=12)
                assert base.is_displayed(MobileLocators.EMAIL_CONTINUE_MESSAGE), \
                     "Tela de e-mail não exibida"

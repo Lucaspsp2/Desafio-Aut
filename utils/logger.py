@@ -27,6 +27,3 @@ def setup_logger():
 
 # Instância global do nosso logger
 log = setup_logger()
-
-# Teste inicial (Opcional)
-# log.info("Logger de automação inicializado com sucesso.") 
