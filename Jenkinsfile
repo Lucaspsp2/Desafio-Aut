@@ -66,7 +66,7 @@ post {
         }
     }
     // Publica o relatório Allure (requer o plugin Allure instalado no Jenkins)
-    allways {
+    always {
         allure(
             reportBuildPolicy: 'ALWAYS',
             results: [[path: ALLURE_RESULTS_DIR]]
