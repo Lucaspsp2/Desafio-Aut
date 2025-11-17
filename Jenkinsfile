@@ -59,14 +59,13 @@ stages {
 }
 
 post {
-    always {
-        // Desativa o ambiente virtual
+    always { // <-- ÚNICO bloco 'always'
         script {
+            // 1. Desativa o ambiente virtual
             sh "deactivate"
         }
-    }
-    // Publica o relatório Allure (requer o plugin Allure instalado no Jenkins)
-    always {
+        
+        // 2. Publica o relatório Allure
         allure(
             reportBuildPolicy: 'ALWAYS',
             results: [[path: ALLURE_RESULTS_DIR]]
